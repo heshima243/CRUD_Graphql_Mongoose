@@ -2,6 +2,7 @@
 
 const express = require('express')
 const {gql, ApolloServer} = require('apollo-server-express')
+require("dotenv").config();
 
 const typeDefs = require('./typeDefs')
 const resolvers = require('./resolvers')
@@ -24,7 +25,7 @@ app.use((req,res)=>{
     res.send("hello from apollo expresss")
 })
 
-await mongoose.connect('mongodb+srv://julien:ZNlAh2mAZnrCF0Bd@testtask.arbjlzi.mongodb.net/?retryWrites=true&w=majority',{
+await mongoose.connect(process.env.MONGO_URL,{
 useUnifiedTopology: true,
 useNewUrlParser: true
 })
