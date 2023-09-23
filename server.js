@@ -25,6 +25,7 @@ app.use((req,res)=>{
     res.send("hello from apollo expresss")
 })
 
+// replace your own url mongodb in file .env
 await mongoose.connect(process.env.MONGO_URL,{
 useUnifiedTopology: true,
 useNewUrlParser: true
